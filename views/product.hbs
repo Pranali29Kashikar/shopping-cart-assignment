@@ -1,0 +1,42 @@
+<section>
+    <div class="container">
+        <div class="box_flex">
+            <div class="prod_list">
+                <nav class="navigation">
+                    <input type="checkbox" id="side_menu" />
+                    <label for="side_menu" class="carret">Fruits & Vegetables</label>
+                    <ul class="mainmenu">
+                        {{#each categories}}
+                        <li><a href="/product/{{this.id}}">{{this.name}}</a></li>
+                        {{/each}}
+                    </ul>
+                </nav>
+                <div class="product_list_menu">
+                    <ul> 
+                        {{#each product}}
+                        <li>
+                            <div>
+                                <h4 tabindex="0">{{this.name}}</h4>
+                                    <div class="prod_desc">
+                                        <div class="prod_img">
+                                            <img tabindex="0" src="{{this.imageURL}}" alt="{{this.name}}">
+                                        </div>
+                                        <p tabindex="0">
+                                            {{this.description}}
+                                        </p>
+                                        <div class="buy_now">
+                                            <a href="cart" class="btn buy">Buy Now 
+                                                <span id="desktop_view">MRP {{this.price}}</span>
+                                                <span id="mobile_view">@ Rs.{{this.price}}</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
