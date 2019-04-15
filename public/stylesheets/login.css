@@ -9,25 +9,31 @@
   display: block;
   width: 300px;
   border: none;
-  border-bottom: 1px solid #dcdcdc; }
+  border-bottom: 1px solid #dcdcdc; 
+}
   .login_mobile input:focus {
-    outline: none; }
+    outline: none; 
+  }
 
 .login_mobile .form_text {
-  width: 50%; }
+  width: 50%; 
+}
 
 .login_mobile .form_set {
-  width: 50%; }
+  width: 50%; 
+}
 
 .login_mobile .btn_login {
   padding: 13px 130px 13px 130px;
-  margin-bottom: 15px; }
+  margin-bottom: 15px; 
+}
 
 .login_mobile .fieldset {
   position: relative;
   color: #dcdcdc;
   margin-bottom: 30px;
-  margin-top: 15px; }
+  margin-top: 15px; 
+}
 
 .login_mobile label {
   color: #999;
@@ -38,8 +44,7 @@
   left: 5px;
   top: 10px;
   transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all; }
+ }
 
 .login_mobile input:focus ~ label, .login_mobile input:valid ~ label {
   top: -20px;
@@ -48,23 +53,27 @@
 
 @media only screen and (max-width: 1023px) {
   .login_mobile {
-    flex-direction: column; }
+    flex-direction: column; 
+  }
     .login_mobile .form_text {
       margin-left: 20px;
       margin-right: 20px;
-      width: 100%; }
+      width: 100%; 
+    }
     .login_mobile .form_set {
-      margin-left: 10px; } }
+      margin-left: 10px; 
+    } 
+  }
 
 /* form  stylings  */
-.login_mobile {
-  /* active state */ }
   .login_mobile input:focus {
-    outline: none; }
+    outline: none; 
+  }
   .login_mobile .bar {
     position: relative;
     display: block;
-    width: 300px; }
+    width: 300px; 
+  }
   .login_mobile .bar:before,
   .login_mobile .bar:after {
     content: "";
@@ -74,15 +83,17 @@
     position: absolute;
     background: #00ffff;
     transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all; }
+  }
   .login_mobile .bar:before {
-    left: 50%; }
+    left: 50%; 
+  }
   .login_mobile .bar:after {
-    right: 50%; }
+    right: 50%; 
+  }
   .login_mobile input:focus ~ .bar:before,
   .login_mobile input:focus ~ .bar:after {
-    width: 50%; }
+    width: 50%; 
+  }
   .login_mobile .highlight {
     position: absolute;
     height: 60%;
@@ -90,30 +101,5 @@
     top: 25%;
     left: 0;
     pointer-events: none;
-    opacity: 0.5; }
-  .login_mobile input:focus ~ .highlight {
-    -webkit-animation: inputHighlighter 0.3s ease;
-    -moz-animation: inputHighlighter 0.3s ease;
-    animation: inputHighlighter 0.3s ease; }
-
-/* animation */
-@-webkit-keyframes inputHighlighter {
-  from {
-    background: #00ffff; }
-  to {
-    width: 0;
-    background: transparent; } }
-
-@-moz-keyframes inputHighlighter {
-  from {
-    background: #00ffff; }
-  to {
-    width: 0;
-    background: transparent; } }
-
-@keyframes inputHighlighter {
-  from {
-    background: #00ffff; }
-  to {
-    width: 0;
-    background: transparent; } }
+    opacity: 0.5; 
+  }

@@ -7,13 +7,10 @@
                 <a class="prev" onclick="plusSlides(-1)" tabindex="0" role="button">Prev</a>
                 <a class="next" id="next" onclick="plusSlides(1)" tabindex="0" role="button">Next</a>
         </div>
-        <br>
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-            <span class="dot" onclick="currentSlide(5)"></span>
+        <div class="dot-button">
+            {{#each banners}}
+            <span class="dot"></span>
+            {{/each}}
         </div>
 </section>
 {{#each categories}}
