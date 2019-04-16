@@ -1,4 +1,4 @@
- <div class="cart-container">
+<div class="cart-container">
     <section>
         <div class="row">
             <div class="shopping-cart">
@@ -9,27 +9,34 @@
     </section>
 
     <section>
-        <div class="cart-item-list">
+        <ul class="cart-item-list">
             <div class="cart-item">
                 <div class="cart-image">
-                    <img src="/static/images/products/fruit-n-veg/apple.jpg" alt=" apple image" tabindex="0"/>
+                    <img src="/static/images/products/fruit-n-veg/apple.jpg" alt=" apple image" tabindex="0" />
                 </div>
                 <div class="description">
                     <p tabindex="0"> Apple - Washington, Regular, 4 pcs </p>
                     <div class="item-count">
-                        <button class="minus-btn" type="button" name="button" onclick="minusCounter()" title ="Remove Item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-12v-2h12v2z"/></svg>
+                        <button class="minus-btn" id="minus-btn" type="button" name="button" onclick="minusCounter(this)"
+                            title="Remove Item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-12v-2h12v2z" />
+                            </svg>
                         </button>
-                        <input type="text" name="name" value="1" id="cart-counter" onclick="plusCounter()" title="Total number of items">
-                         <button class="plus-btn" type="button" name="button" title ="Add Item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>                          
+                        <input type="text" name="name" id="cart-counter" value="1" title="Total number of items" />
+                        <button class="plus-btn" id="plus-btn"  type="button" name="button" title="Add Item" onclick="plusCounter(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z" />
+                            </svg>
                         </button>
                         <p tabindex="0">x &nbsp; &nbsp; Rs.187</p>
                         <div tabindex="0" class="total-price">Rs.187</div>
                     </div>
                 </div>
             </div>
-        </div>
+        </ul>
     </section>
     <section>
         <div class="banner">

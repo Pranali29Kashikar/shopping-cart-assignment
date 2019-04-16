@@ -5,38 +5,38 @@
             <p>We do not share your personal details with anyone.</p>
         </div>
         <div class="form_set">
-            <form>
+            <form name="register" method="POST" onsubmit="return validate_form();">
                 <div class="fieldset">
-                    <input type="text" required>
+                    <input type="text" id="user_name" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>First Name</label>
                 </div>
                 <div class="fieldset">
-                    <input type="text" required>
+                    <input type="text" id="last_name" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Last Name</label>
                 </div>
                 <div class="fieldset">
-                    <input type="email" required>
+                    <input type="email" id="email" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Email</label>
                 </div>
                 <div class="fieldset">
-                    <input type="password" required>
+                    <input type="password" id="pwd" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Password</label>
                 </div>
                 <div class="fieldset">
-                    <input type="password" required>
+                    <input type="password" id="cnpwd" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Confirm Password</label>
                 </div>
-                <button type="submit" class="btn btn_login">Signup</button>
+                <button type="submit" class="btn btn_login" onclick="signup()">Signup</button>
             </div>
         </form>
     </div>
