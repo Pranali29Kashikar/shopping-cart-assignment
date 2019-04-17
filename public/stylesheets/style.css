@@ -61,7 +61,8 @@ figure {
   display: flex;
   background-color: #DCDCDC;
   margin-left: 38%;
-  padding: 10px; }
+  padding: 10px;
+  color: black; }
 
 .home {
   padding-top: 50px; }

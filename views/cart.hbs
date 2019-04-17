@@ -9,7 +9,7 @@
     </section>
 
     <section>
-        <ul class="cart-item-list">
+        <div class="cart-item-list" id="cartList">
             <div class="cart-item">
                 <div class="cart-image">
                     <img src="/static/images/products/fruit-n-veg/apple.jpg" alt=" apple image" tabindex="0" />
@@ -31,12 +31,12 @@
                                     d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z" />
                             </svg>
                         </button>
-                        <p tabindex="0">x &nbsp; &nbsp; Rs.187</p>
+                        <p tabindex="0" id="cart-price-element">x &nbsp; &nbsp; Rs.187</p>
                         <div tabindex="0" class="total-price">Rs.187</div>
                     </div>
                 </div>
             </div>
-        </ul>
+        </div>
     </section>
     <section>
         <div class="banner">
@@ -49,7 +49,7 @@
             <p tabindex="0">Promo code can be applied on payment page</p>
             <button type="submit" class="btn btn-checkout">
                 <span>Proceed to checkout</span>
-                <span>Rs. 187</span>
+                <span class="toatlPrice"></span>
             </button>
         </div>
     </section>

@@ -60,7 +60,7 @@ function validate_form() {
   else if ((password.length) < 8) {
     alert("Password should atleast 8 character in length...!!!!!!");
   }
-  else if (password != cpassword) {                                                 
+  else if (password != cpassword) {
     alert("Your passwords don't match. Try again?");
   }
   else {
@@ -75,31 +75,53 @@ function validate_form() {
     var theUrl = "/register_user";
     xmlhttp.open("POST", theUrl);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xmlhttp.onload = function(){
-      if(xmlhttp.status == 200){
+    xmlhttp.onload = function () {
+      if (xmlhttp.status == 200) {
         window.location.href = "/index";
-      }      
+      }
     }
-    xmlhttp.send(JSON.stringify(registerObj));  
-    signup(registerObj);  
+    xmlhttp.send(JSON.stringify(registerObj));
+    signup(registerObj);
   }
 }
 
 function signup(registerObj) {
-var uname = registerObj.name;
-alert("Hello" + " " + uname + " " + "Welcome to Sabka Bazar");
+  var uname = registerObj.name;
+  alert("Hello" + " " + uname + " " + "Welcome to Sabka Bazar");
 }
 
 // Add and remove item from cart
 function plusCounter(plus) {
   var counterAdd = document.getElementById("cart-counter");
   counterAdd.value = parseInt(counterAdd.value) + 1;
+  // var counterValue = counterAdd.value;
+  // updateItemValue();
 }
 
 function minusCounter(minus) {
-  var counterAdd = document.getElementById("cart-counter");
-  counterAdd.value = parseInt(counterAdd.value) - 1;
+  var counterminus = document.getElementById("cart-counter");
+  counterminus.value = parseInt(counterminus.value) - 1;
+  if (parseInt(counterminus.value) == 0) {
+    document.getElementById("cartList").innerHTML = '';
+  }
 }
 
+//update cart value
 
- 
+// function updateItemValue() {
+//   var cartItemConatiner = document.getElementsByClassName("cart-item-list")[0];
+//   var cartRows = cartItemConatiner.getElementsByClassName("cart-item");
+//   var total = 0;
+//   for (i = 0; cartRows.length; i++) {
+//     var cartRow = cartRows.[i];
+//     var priceElement = cartRow.getElementsByClassName("cart-price-element")[0];
+//     var quantityElement = cartRow.getElementsByClassName("toatlPrice")[0];
+//     var price = priceElement.innerText;
+//     var quantity = quantityElement.value;
+//     total = total + (price * quantity);
+//     console.log(total);
+//   }
+//   document.getElementsByClassName("toatlPrice")[0].innerText = 'Rs' + total;
+// }
+
+

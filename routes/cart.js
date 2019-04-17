@@ -8,4 +8,5 @@ router.get('/', function(req, res, next) {
   res.render('cart', {product:prodData})
 });
 
+
 module.exports = router;
