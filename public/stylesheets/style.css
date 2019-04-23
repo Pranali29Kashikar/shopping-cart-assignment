@@ -106,7 +106,8 @@ footer {
 
 @media only screen and (max-width: 479px) {
   #hamburger {
-    display: inline; }
+    display: inline;
+    background-color: #DCDCDC; }
   .btn {
     font-size: 12px;
     padding: 13px 10px; }
@@ -128,8 +129,8 @@ footer {
       text-decoration: none;
       font-size: 17px;
       display: block;
-      padding-left: 10px;
-      padding-bottom: 10px; }
+      padding-top: 10px;
+      padding-right: 5px; }
     .cart .topnav a.icon {
       display: block; }
     .cart .topnav a:hover {

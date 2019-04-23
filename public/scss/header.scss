@@ -66,6 +66,7 @@ footer {
   @media only screen and (max-width: $breakpoint-mobile) {
      #hamburger {
         display: inline;
+        background-color: #DCDCDC;
       }
       .btn{
         font-size: 12px;
@@ -91,8 +92,8 @@ footer {
           text-decoration: none;
           font-size: 17px;
           display: block;
-          padding-left: 10px;
-          padding-bottom: 10px;
+          padding-top: 10px;
+          padding-right: 5px;
         }
         
         .topnav a.icon {
