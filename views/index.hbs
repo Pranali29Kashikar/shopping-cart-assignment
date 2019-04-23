@@ -1,0 +1,35 @@
+<section class="slider">
+    <div class="slideshow-container">
+        <div class="fade">
+            {{#each banners}}
+                <img tabindex="0" class="mySlides"  src="{{this.bannerImageUrl}}" alt="{{this.bannerImageAlt}}" role="slider">
+            {{/each}}
+                <a class="prev" onclick="plusSlides(-1)" tabindex="0" role="button">Prev</a>
+                <a class="next" id="next" onclick="plusSlides(1)" tabindex="0" role="button">Next</a>
+        </div>
+        <div class="dot-button">
+            {{#each banners}}
+            <span class="dot"></span>
+            {{/each}}
+        </div>
+</section>
+{{#each categories}}
+<section class="slider">
+    <div class="container">
+        <div class="box">
+            <div class="cart_img">
+                <figure>
+                <img tabindex="0" src="{{this.imageUrl}}" alt="{{this.name}}" />
+                </figure>
+            </div>
+            <div class="cart_desc">
+                <h3 tabindex="0">{{this.name}}</h3>
+                <p tabindex="0">{{this.description}}</p>
+                <a href="/product/{{this.id}}" class="btn" role="button">Explore {{this.key}}</a>
+            </div>
+        </div>
+    </div>
+</section>
+{{/each}}
+
+   
