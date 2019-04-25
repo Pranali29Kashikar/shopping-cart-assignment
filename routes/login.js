@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var itemCounter = require('./constant');
 
 router.get('/', function(req, res, next) {
-    res.render('login');
+    res.render('login',{item_counter: itemCounter.item_counter});
   });
 
 module.exports = router;

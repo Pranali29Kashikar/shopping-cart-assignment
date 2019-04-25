@@ -96,13 +96,17 @@ footer {
           padding-right: 5px;
         }
         
-        .topnav a.icon {
+        .topnav a.icon-menu {
           display: block;
         }
         
         .topnav a:hover {
           color: #C71585;
         }
+
+        // .icon-menu:focus ~ #myLinks{
+        //    display: block;
+        //  }
         
         .active {
           background-color: #4CAF50;
@@ -125,7 +129,7 @@ footer {
       padding: 10px 5px 5px 5px;
   }
   #hamburger{
-    icon{
+    icon-menu{
       position: relative;
     color:  #C71585;
     top: 0;

@@ -43,30 +43,16 @@
   margin-right: 60px;
   width: 100%; }
 
-.description span {
-  display: block;
-  font-size: 14px;
-  color: #43484D;
-  font-weight: 400; }
-
-.description span:first-child {
-  margin-bottom: 5px; }
-
-.description span:last-child {
-  font-weight: 300;
-  margin-top: 8px;
-  color: #86939E; }
-
 .item-count {
   display: flex;
   padding-top: 10px; }
-  .item-count #cart-counter {
+  .item-count .cart-counter {
     text-align: center;
     max-width: 50px;
     border: 0; }
   .item-count p {
     margin-left: 35px; }
-  .item-count .total-price {
+  .item-count .priceTotal {
     flex: auto;
     text-align: right; }
   .item-count button[class*=btn] {
@@ -74,7 +60,8 @@
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
-    overflow: hidden; }
+    overflow: hidden;
+    outline: none; }
 
 .banner {
   display: flex;
@@ -101,6 +88,8 @@
     width: 100%;
     margin-top: 10px;
     font-size: 17px; }
+    .checkout-btn .btn-checkout .totalPrice {
+      float: right; }
   .checkout-btn p {
     font-weight: 200;
     font-size: 17px;
@@ -126,9 +115,13 @@
     margin: 0;
     padding-left: 10px; }
   .item-count button.plus-btn {
-    padding: 0; }
+    padding: 0;
+    outline: none; }
   .item-count button.minus-btn {
-    padding: 0; }
+    padding: 0;
+    outline: none; }
+  .item-count .priceTotal {
+    padding-right: 15px; }
   .banner img {
     width: 30%; }
   .banner p {

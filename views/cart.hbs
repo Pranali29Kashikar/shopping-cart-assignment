@@ -2,41 +2,43 @@
     <section>
         <div class="row">
             <div class="shopping-cart">
-                <div class="myCart">My Cart <label id="cart-value">(1 item)</label></div>
+                <div class="myCart">My Cart <label id="cart-value">( {{item_counter}} item)</label></div>
                 <a href="#" class="closebtn">X</a>
             </div>
         </div>
     </section>
 
     <section>
+        {{#each productInCart}}
         <div class="cart-item-list" id="cartList">
             <div class="cart-item">
                 <div class="cart-image">
-                    <img src="/static/images/products/fruit-n-veg/apple.jpg" alt=" apple image" tabindex="0" />
+                    <img src="{{imageURL}}" alt="{{name}}" tabindex="0" />
                 </div>
                 <div class="description">
-                    <p tabindex="0"> Apple - Washington, Regular, 4 pcs </p>
+                    <p tabindex="0">{{name}}</p>
                     <div class="item-count">
-                        <button class="minus-btn" id="minus-btn" type="button" name="button" onclick="minusCounter(this)"
+                        <button class="minus-btn" id="minus-btn" type="button" name="button" onclick="minusCount('{{id}}', {{@index}},{{price}})"
                             title="Remove Item">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path
                                     d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-12v-2h12v2z" />
                             </svg>
                         </button>
-                        <input type="text" name="name" id="cart-counter" value="1" title="Total number of items" />
-                        <button class="plus-btn" id="plus-btn"  type="button" name="button" title="Add Item" onclick="plusCounter(this)">
+                        <input class="cart-counter" type="text" name="name" id="prod{{@index}}" value="{{count}}" title="Total number of items" />
+                        <button class="plus-btn" id="plus-btn"  type="button" name="button" title="Add Item" onclick="addCount('{{id}}', {{@index}}, {{price}})">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path
                                     d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z" />
                             </svg>
                         </button>
-                        <p tabindex="0" id="cart-price-element">x &nbsp; &nbsp; Rs.187</p>
-                        <div tabindex="0" class="total-price">Rs.187</div>
+                        <p tabindex="0" id="cart-price-element">x &nbsp; &nbsp; Rs.{{price}}</p>
+                        <div tabindex="0" class="priceTotal">Rs. <span class="total-price totalp{{@index}}">{{total_price}}</span> </div>
                     </div>
-                </div>
+                </div>  
             </div>
         </div>
+         {{/each}}
     </section>
     <section>
         <div class="banner">
@@ -49,7 +51,7 @@
             <p tabindex="0">Promo code can be applied on payment page</p>
             <button type="submit" class="btn btn-checkout">
                 <span>Proceed to checkout</span>
-                <span class="toatlPrice"></span>
+                <span class="totalPrice"></span>
             </button>
         </div>
     </section>

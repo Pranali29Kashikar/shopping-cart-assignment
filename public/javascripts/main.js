@@ -1,12 +1,11 @@
-
-function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
+ function myFunction() {
+   var x = document.getElementById("myLinks");
+   if (x.style.display === "block") {
+     x.style.display = "none";
+   } else {
+     x.style.display = "block";
+   }
+ }
 
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -37,7 +36,6 @@ function validateForm() {
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
   if (email == "xyz@gmail.com" && password == "sabka123") {
-    // alert ("Login successfully");
     console.log("welcome");
     window.location.href = "index";
     return false;
@@ -90,38 +88,73 @@ function signup(registerObj) {
   alert("Hello" + " " + uname + " " + "Welcome to Sabka Bazar");
 }
 
-// Add and remove item from cart
-function plusCounter(plus) {
-  var counterAdd = document.getElementById("cart-counter");
-  counterAdd.value = parseInt(counterAdd.value) + 1;
-  // var counterValue = counterAdd.value;
-  // updateItemValue();
+
+// Cart Funcationality 
+
+//update cart count
+function updateCart(item_counter) {
+  document.getElementById("cart_count").innerHTML = item_counter;
+  document.getElementById("cart-value").innerHTML = "( " + item_counter + " items)";
+  updateCheckoutAmount();
 }
 
-function minusCounter(minus) {
-  var counterminus = document.getElementById("cart-counter");
-  counterminus.value = parseInt(counterminus.value) - 1;
-  if (parseInt(counterminus.value) == 0) {
-    document.getElementById("cartList").innerHTML = '';
+function buyProduct(id, operation, endpoint) {
+  console.log(id, operation, endpoint);
+  var url = `http://localhost:3000/cart/${endpoint}/${id}/${operation}`;
+  let xmlHttpReq = new XMLHttpRequest();
+  xmlHttpReq.open("GET", `${url}`, true);
+  xmlHttpReq.onload = function () {
+    if (xmlHttpReq.status >= 200 && xmlHttpReq.status < 400) {
+      let data = JSON.parse(xmlHttpReq.responseText);
+      updateCart(data.item_counter);
+    } else {
+      console.log("We conected to the server, but it returned an error.");
+    }
   }
+  xmlHttpReq.onerror = function () {
+    console.log("Connection Error");
+  }
+  xmlHttpReq.send();
 }
 
-//update cart value
+// Add count
+function addCount(id, prodid, price) {
+  var input = document.getElementById("prod" + prodid);
+  input.value = parseInt(input.value) + 1;
+  item_counter = input.value;
+  buyProduct(id, 'add', 'addtocart');
+  updateTotalCart(prodid, price);
+}
 
-// function updateItemValue() {
-//   var cartItemConatiner = document.getElementsByClassName("cart-item-list")[0];
-//   var cartRows = cartItemConatiner.getElementsByClassName("cart-item");
-//   var total = 0;
-//   for (i = 0; cartRows.length; i++) {
-//     var cartRow = cartRows.[i];
-//     var priceElement = cartRow.getElementsByClassName("cart-price-element")[0];
-//     var quantityElement = cartRow.getElementsByClassName("toatlPrice")[0];
-//     var price = priceElement.innerText;
-//     var quantity = quantityElement.value;
-//     total = total + (price * quantity);
-//     console.log(total);
-//   }
-//   document.getElementsByClassName("toatlPrice")[0].innerText = 'Rs' + total;
-// }
+// Minus count
+function minusCount(id, prodid, price) {
+  var input = document.getElementById("prod" + prodid);
+  input.value = parseInt(input.value) - 1;
+  if (input.value > 0) {
+    item_counter = input.value;
+    buyProduct(id, 'remove', 'addtocart');
+  } else if (input.value <= 0) {
+    input.value = 0;
+    buyProduct(id, 'remove', 'remove-item');
+  }
+  updateTotalCart(prodid, price);
+}
 
 
+function updateTotalCart(prodid, price) {
+  var input = document.getElementById("prod" + prodid);
+  var totalPrice = parseInt(price) * parseInt(input.value);
+  document.getElementsByClassName("totalp" + prodid)[0].innerHTML = totalPrice;
+  updateCheckoutAmount();
+}
+
+function updateCheckoutAmount() {
+  var checkoutAccumulation = document.getElementsByClassName("total-price");
+  let totalCheckoutPrice = 0;
+  for (let i = 0; i < checkoutAccumulation.length; i++) {
+    totalCheckoutPrice = totalCheckoutPrice + parseInt(checkoutAccumulation[i].innerHTML);
+  }
+  console.log(totalCheckoutPrice);
+  document.getElementsByClassName("totalPrice")[0].innerHTML = "Rs. " + totalCheckoutPrice + " >";
+
+}
