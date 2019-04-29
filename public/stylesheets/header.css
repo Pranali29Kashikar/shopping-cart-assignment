@@ -36,7 +36,11 @@
   text-decoration: none;
   color: black; }
 
-.header footer {
+.header #hamburger {
+  display: none;
+  color: #C71585; }
+
+footer {
   background-color: #eaeaea;
   padding: 10px;
   color: black;
@@ -46,10 +50,6 @@
   padding-left: 9%;
   font-weight: 400;
   font-size: 10px; }
-
-.header #hamburger {
-  display: none;
-  color: #C71585; }
 
 @media only screen and (max-width: 479px) {
   .header #nav_link {
