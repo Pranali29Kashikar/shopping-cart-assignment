@@ -82,7 +82,6 @@
 .buy_now {
   position: relative;
   display: flex;
-  align-content: end;
   justify-content: flex-end;
   #mobile_view {
     display: none;
@@ -130,7 +129,6 @@
         .buy_now {
           position: relative;
           display: inline-block;
-          align-content: end;
           justify-content: flex-end;
           align-self: baseline;
           margin-top: 20px;
@@ -214,7 +212,6 @@
         .buy_now {
           position: relative;
           display: inline-block;
-          align-content: end;
           justify-content: flex-end;
           align-self: baseline;
           margin-top: 20px;

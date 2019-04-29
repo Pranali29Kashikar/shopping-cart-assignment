@@ -1,7 +1,6 @@
 .cart-container {
   background-color: #E0E0E0;
   max-width: 1142px;
-  max-width: 1142px;
   margin: 10px auto; }
 
 .shopping-cart {
@@ -14,13 +13,14 @@
   .shopping-cart .myCart {
     position: relative;
     color: white; }
-    .shopping-cart .myCart #cart-value {
-      font-size: 15px;
-      display: contents;
-      color: white; }
   .shopping-cart a {
     color: white;
     display: none; }
+
+#cart-value {
+  font-size: 15px;
+  display: contents;
+  color: white; }
 
 .cart-item-list {
   display: flex;
@@ -125,6 +125,6 @@
   .banner img {
     width: 30%; }
   .banner p {
-    margin: 10px 0px 0px 0px;
+    margin: 10px 0 0;
     font-weight: 200;
     font-size: 14px; } }

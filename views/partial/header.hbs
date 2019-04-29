@@ -1,17 +1,17 @@
-<header>
+<header class="header">
     <nav>
     <div class="row">
         <img src="/static/images/logo.png" alt="Sabka Bazar logo" class="logo">
-        <ul class="main-nav home">
+        <ul class="header__main-nav header__main-nav--top">
             <li><a href="/index">Home</a></li>
             <li><a href="/product">Product</a></li>
         </ul>
-        <div class="cart">
-            <ul class="main-nav ">
+        <div class="header__cart">
+            <ul class="header__main-nav ">
                 <li><a href="/login">SignIn</a></li>
                 <li><a href="/register">Register</a></li>
             </ul>
-            <a href="/cart" class="cart_item">
+            <a href="/cart" class="header__cart-item">
                 <svg version="1.1" id="Layer_1" focusable="false" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height=30 width=30
                     viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
@@ -20,16 +20,16 @@
                 <p id="cart_count">{{item_counter}}</p> &nbsp;
                 <p>items</p>
             </a>
-                <div class="topnav" id="hamburger">
-
-                    <a href="javascript:void(0);" class="icon-menu" id="show_menu" onclick="myFunction()">&#9776;</a>
-                    <div id="myLinks">
-                        <a href="/index">Home</a>
-                        <a href="/product">Product</a>
-                        <a href="/login">Login</a>
-                        <a href="/register">Register</a>
-                    </div>
-                </div>
+                <nav class="header__topnav" id="hamburger">
+                    <input type="checkbox" id="nav_link" />
+                    <label for="nav_link">&#9776;</label> 
+                    <ul class="header__myLinks">
+                        <li><a href="/index">Home</a></li>
+                        <li><a href="/product">Product</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                    </ul>
+                </nav>
         </div>
     </div>
     </nav>
